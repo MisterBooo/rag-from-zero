@@ -8,7 +8,8 @@ RAG 教程第 2 章 - 端到端迷你 RAG 骨架(零依赖)
 对应文章:https://www.wsxdmx.com/projects/rag-system/c/02-architecture
 """
 
-# ============ 离线:建库 ============
+# ============ 离线:建库(只跑一次 / 定期更新) ============
+
 docs = [
     "第1条 责任范围:本保险承保意外伤害导致的身故或残疾,但以下情况除外:战争、核辐射。",
     "第2条 等待期:本产品等待期为90天,等待期内出险不予赔付。",
@@ -17,42 +18,68 @@ docs = [
 
 
 def chunk(text, size=20):
-    # 朴素切分:每 size 个字一段(真实用结构感知切分,见第 3 章)
+    """把一段长文本剪成多个小段(chunk)。
+
+    Args:
+        text: 一篇文档的全文
+        size: 每段多少字(真实系统按"语义"切,见第 3 章;这里图省事按定长切)
+    Returns:
+        小段组成的列表
+    """
+    # 从 0 开始,每隔 size 个字截一段:text[0:20]、text[20:40] ……
     return [text[i:i + size] for i in range(0, len(text), size)]
 
 
 def build_index(docs):
-    # 朴素索引:一个 chunk 列表(真实用向量库 + 倒排索引,见第 4、5 章)
+    """把所有文档切成 chunk,存成一个"能查的"列表 = 玩具版知识库。
+
+    真实系统这一步会把每个 chunk 转成向量存进向量库 + 建倒排索引(第 4、5 章)。
+    """
     index = []
-    for doc_id, d in enumerate(docs):
-        for c in chunk(d):
-            index.append({"doc_id": doc_id, "text": c})
+    for doc_id, text in enumerate(docs):   # doc_id:记住这段来自第几篇文档(后面溯源用)
+        for piece in chunk(text):          # 把这篇文档切成若干小段
+            index.append({"doc_id": doc_id, "text": piece})
     return index
 
 
-# ============ 在线:问答 ============
+# ============ 在线:问答(每次提问都跑一遍) ============
+
 def retrieve(index, query, top_k=2):
-    # 朴素检索:按"query 字符与 chunk 重合数"打分(真实用向量相似度 + BM25,见第 5、6 章)
-    scored = [(sum(ch in c["text"] for ch in query), c) for c in index]
+    """从知识库里找出最相关的 top_k 个 chunk。
+
+    这里用最朴素的相似度:query 里有多少个字在 chunk 文本里出现过。
+    真实系统换成向量相似度(第 4 章)+ BM25 关键词打分(第 5 章)。
+    """
+    scored = []
+    for item in index:
+        # 命中数:query 的每个字,只要在这个 chunk 文本里出现就 +1
+        hit = sum(1 for ch in query if ch in item["text"])
+        scored.append((hit, item))
+    # 按命中数从高到低排序
     scored.sort(key=lambda x: x[0], reverse=True)
-    return [c for s, c in scored[:top_k] if s > 0]
+    # 取前 top_k 个,且至少命中 1 个字(命中 0 的直接丢掉)
+    return [item for hit, item in scored[:top_k] if hit > 0]
 
 
 def assemble_context(chunks):
-    # 把召回的块拼成上下文(真实还要做 Prompt 构建 + 引用溯源,见第 9 章)
+    """把召回的 chunk 拼成一段"上下文",准备喂给大模型。
+
+    每条都标上来源 doc_id;真实系统还会做 Prompt 模板 + 引用溯源(第 9 章)。
+    """
     return "\n".join(f"[来源 doc{c['doc_id']}] {c['text']}" for c in chunks)
 
 
 def answer(index, query):
-    hits = retrieve(index, query)
-    if not hits:
+    """完整走一遍:检索 → 拼上下文 →(交给模型)回答。"""
+    hits = retrieve(index, query)          # ① 先检索:捞出相关的几段
+    if not hits:                           # 一条都没召回 → 模型没依据,只能瞎猜
         return "没检索到 → 模型只能瞎猜(幻觉)"
-    ctx = assemble_context(hits)
-    # 真实这里会把 ctx + query 拼成 prompt 交给 LLM;这里只打印模型会看到什么
-    return f"模型将基于以下上下文作答:\n{ctx}"
+    context = assemble_context(hits)       # ② 拼上下文
+    # ③ 真实系统这里会把 context + query 拼成 prompt 发给 LLM;玩具版只打印模型会看到啥
+    return f"模型将基于以下上下文作答:\n{context}"
 
 
 if __name__ == "__main__":
-    index = build_index(docs)
+    index = build_index(docs)              # 离线:建库(只跑一次)
     print(f"建库完成,共 {len(index)} 个 chunk\n")
-    print(answer(index, "核辐射保不保"))
+    print(answer(index, "核辐射保不保"))    # 在线:每次提问跑一遍
