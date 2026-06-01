@@ -44,6 +44,7 @@
 | 第 4 章 | Embedding 选型 | [→ 代码](chapters/ch04-embedding/) | [→ 阅读](https://www.wsxdmx.com/projects/rag-system/c/04-embedding) |
 | 第 5 章 | 检索召回 | [→ 代码](chapters/ch05-retrieval/) | [→ 阅读](https://www.wsxdmx.com/projects/rag-system/c/05-retrieval) |
 | 第 6 章 | 重排与检索优化 | [→ 代码](chapters/ch06-reranking/) | [→ 阅读](https://www.wsxdmx.com/projects/rag-system/c/06-reranking) |
+| 第 7 章 | Query 理解与改写 | [→ 代码](chapters/ch07-query-understanding/) | [→ 阅读](https://www.wsxdmx.com/projects/rag-system/c/07-query-understanding) |
 | ... | ... | ... | ... |
 
 ## 快速开始
