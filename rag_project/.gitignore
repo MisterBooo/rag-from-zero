@@ -1,0 +1,18 @@
+# 密钥,绝不入库
+.env
+
+# 向量库本地数据(由 build_index 生成,可随时重建)
+chroma_data/
+
+# 合成测试数据(由 scripts/generate_synthetic_data.py 生成,不入库)
+data/sample_docs/*.pdf
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# 本地模型缓存(sentence-transformers / huggingface)
+.cache/

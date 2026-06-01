@@ -1,0 +1,21 @@
+# ─── RAG From Zero · 端到端项目依赖 ───────────────────────────────
+# 版本钉死,保证 clone 下来谁都能装上、跑得起来。
+# 没有 LangChain —— 整个项目手写,看得见每一步在做什么。
+
+# LLM:用 OpenAI 兼容协议调 DeepSeek(也可换任何兼容服务)
+openai>=1.0.0,<2.0.0
+
+# PDF 处理:读 PDF 文本 + 生成合成测试数据
+pypdf>=4.0.0
+reportlab>=4.0.0
+
+# 向量库 + Embedding(build_index / ask 的完整链路用)
+chromadb>=0.4.22,<0.5.0
+sentence-transformers>=2.5.0    # 本地加载 bge-m3 / bge-reranker,首次运行会下载模型(约 2GB)
+
+# 工具
+python-dotenv>=1.0.0            # 从 .env 读 key 的便利;没装也能跑(直接用环境变量)
+rich>=13.0.0                    # 终端彩色输出,看着舒服
+
+# 可选:jieba 让 BM25 走「词级」分词,检索更准;不装会自动退到「字级」,一样能跑
+# jieba>=0.42.1

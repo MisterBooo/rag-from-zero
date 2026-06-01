@@ -1,0 +1,20 @@
+{"id": 1, "question": "本产品的等待期是多少天？", "ground_truth": "90 天，自合同生效日起算；意外伤害不受等待期限制。", "source": "insurance_policy_v1.pdf"}
+{"id": 2, "question": "犹豫期有多长？犹豫期内退保要扣费吗？", "ground_truth": "犹豫期 15 天，自签收次日 0 时起算；犹豫期内可无理由退保并全额退还保费，不收任何费用。", "source": "insurance_policy_v1.pdf"}
+{"id": 3, "question": "核辐射导致的伤害理赔吗？", "ground_truth": "不赔。核爆炸、核辐射或核污染属于责任免除范围。", "source": "insurance_policy_v1.pdf"}
+{"id": 4, "question": "现金价值怎么计算？", "ground_truth": "现金价值 = 累计已交保费 − 累计风险保费 − 累计管理费用，具体以合同附表为准。", "source": "insurance_policy_v1.pdf"}
+{"id": 5, "question": "酒后驾驶出了事故能赔吗？", "ground_truth": "不能。酒后驾驶属于责任免除情形。", "source": "insurance_policy_v1.pdf"}
+{"id": 6, "question": "这份保险保什么？", "ground_truth": "承保保险期间内因意外伤害（外来、突发、非本意、非疾病）导致的身故或残疾。", "source": "insurance_policy_v1.pdf"}
+{"id": 7, "question": "分期交费有宽限期吗？多久？", "ground_truth": "有，自约定交费日次日起 60 天为宽限期，期内出险仍承担责任但扣减欠交保费。", "source": "insurance_policy_v1.pdf"}
+{"id": 8, "question": "理赔申请有时间限制吗？", "ground_truth": "有，应在知道保险事故发生之日起 180 天内提出申请。", "source": "insurance_policy_v1.pdf"}
+{"id": 9, "question": "没有指定受益人怎么办？", "ground_truth": "未指定受益人的，保险金作为被保险人遗产，由公司依法向继承人给付。", "source": "insurance_policy_v1.pdf"}
+{"id": 10, "question": "犹豫期之后退保多久能拿到钱？", "ground_truth": "公司自收到解除申请之日起 30 日内退还合同的现金价值。", "source": "insurance_policy_v1.pdf"}
+{"id": 11, "question": "潜水、攀岩这类运动出险赔吗？", "ground_truth": "不赔。潜水、攀岩、跳伞等高风险运动属于责任免除范围。", "source": "insurance_policy_v1.pdf"}
+{"id": 12, "question": "发生事故后多久要报案？报案电话是多少？", "ground_truth": "48 小时内报案，客服热线 400-000-0000，或通过官方 APP。", "source": "claim_guide.pdf"}
+{"id": 13, "question": "理赔需要准备哪些资料？", "ground_truth": "理赔申请书、被保险人身份证件、事故证明、相关费用票据原件、受益人银行账户信息。", "source": "claim_guide.pdf"}
+{"id": 14, "question": "理赔多久能审核完？", "ground_truth": "资料齐全后 10 个工作日内完成审核，复杂情形不超过 30 日；通过后 3 个工作日内划款。", "source": "claim_guide.pdf"}
+{"id": 15, "question": "有哪些常见的拒赔原因？", "ground_truth": "属于责任免除、未如实告知健康状况、超过 180 天申请时效、资料不全且未补齐。", "source": "claim_guide.pdf"}
+{"id": 16, "question": "保额最高多少？意外医疗有免赔额吗？", "ground_truth": "保额最高 100 万元，意外医疗 0 免赔，100% 报销社保内费用。", "source": "product_brochure.pdf"}
+{"id": 17, "question": "多大年龄可以投保？", "ground_truth": "18 至 65 周岁、身体健康的自然人均可投保。", "source": "product_brochure.pdf"}
+{"id": 18, "question": "保障期间多长？续保要重新审核健康吗？", "ground_truth": "保障期间 1 年，可续保；续保无需重新审核健康状况，等待期仅首次投保时计算。", "source": "product_brochure.pdf"}
+{"id": 19, "question": "30 岁投保大概多少钱一年？", "ground_truth": "30 岁标准体年缴约 366 元，平均每天约 1 元。", "source": "product_brochure.pdf"}
+{"id": 20, "question": "火星上的紫外线辐射这款产品保吗？", "ground_truth": "根据现有资料无法确定（属超纲/无依据问题，模型应拒答而非编造）。", "source": "none"}
