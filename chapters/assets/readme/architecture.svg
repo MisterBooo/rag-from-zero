@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="340" viewBox="0 0 800 340" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="800" height="340" fill="#FFFFFF"/>
+  <text x="14" y="22" font-size="12" fill="#534AB7" opacity="0.12">www.wsxdmx.com</text>
+  <text x="786" y="328" font-size="12" fill="#534AB7" opacity="0.12" text-anchor="end">吴师兄大模型</text>
+  <text x="400" y="34" font-size="18" font-weight="700" fill="#2A2A33" text-anchor="middle">RAG 的两条链路:一条"准备",一条"现做"</text>
+
+  <!-- 离线 -->
+  <rect x="24" y="58" width="752" height="108" rx="10" fill="#EEEDFE" stroke="#534AB7"/>
+  <text x="40" y="82" font-size="13" font-weight="700" fill="#3C3489">离线建库 · 提前把饭做好放冰箱(只跑一次 / 定期更新)</text>
+  <g font-size="11.5">
+    <rect x="40" y="96" width="120" height="50" rx="8" fill="#FFFFFF" stroke="#C4B5FD"/><text x="100" y="118" fill="#3C3489" text-anchor="middle">文档源</text><text x="100" y="135" font-size="9.5" fill="#888780" text-anchor="middle">PDF/Word/PPT</text>
+    <rect x="184" y="96" width="100" height="50" rx="8" fill="#FFFFFF" stroke="#C4B5FD"/><text x="234" y="125" fill="#3C3489" text-anchor="middle">解析+切分</text>
+    <rect x="308" y="96" width="120" height="50" rx="8" fill="#FFFFFF" stroke="#C4B5FD"/><text x="368" y="118" fill="#3C3489" text-anchor="middle">Embedding</text><text x="368" y="135" font-size="9.5" fill="#888780" text-anchor="middle">转成向量</text>
+    <rect x="452" y="96" width="150" height="50" rx="8" fill="#534AB7"/><text x="527" y="125" font-weight="600" fill="#FFFFFF" text-anchor="middle">建索引 → 知识库</text>
+  </g>
+  <g stroke="#A78BFA" stroke-width="2">
+    <line x1="160" y1="121" x2="182" y2="121" marker-end="url(#p)"/>
+    <line x1="284" y1="121" x2="306" y2="121" marker-end="url(#p)"/>
+    <line x1="428" y1="121" x2="450" y2="121" marker-end="url(#p)"/>
+  </g>
+  <text x="690" y="125" font-size="11" fill="#888780" text-anchor="middle">用户感知不到</text>
+
+  <!-- 在线 -->
+  <rect x="24" y="178" width="752" height="108" rx="10" fill="#E1F5EE" stroke="#1D9E75"/>
+  <text x="40" y="202" font-size="13" font-weight="700" fill="#0F6E56">在线问答 · 客人点单现做(每次提问都跑一遍)</text>
+  <g font-size="11.5">
+    <rect x="40" y="216" width="100" height="50" rx="8" fill="#FFFFFF" stroke="#6EE7B7"/><text x="90" y="245" fill="#0F6E56" text-anchor="middle">用户提问</text>
+    <rect x="164" y="216" width="100" height="50" rx="8" fill="#FFFFFF" stroke="#6EE7B7"/><text x="214" y="245" fill="#0F6E56" text-anchor="middle">检索 + 重排</text>
+    <rect x="288" y="216" width="110" height="50" rx="8" fill="#FFFFFF" stroke="#6EE7B7"/><text x="343" y="245" fill="#0F6E56" text-anchor="middle">拼上下文</text>
+    <rect x="422" y="216" width="120" height="50" rx="8" fill="#1D9E75"/><text x="482" y="238" font-weight="600" fill="#FFFFFF" text-anchor="middle">LLM 生成</text><text x="482" y="254" font-size="9.5" fill="#D6F2E8" text-anchor="middle">回答</text>
+  </g>
+  <g stroke="#6EE7B7" stroke-width="2">
+    <line x1="140" y1="241" x2="162" y2="241" marker-end="url(#g)"/>
+    <line x1="264" y1="241" x2="286" y2="241" marker-end="url(#g)"/>
+    <line x1="398" y1="241" x2="420" y2="241" marker-end="url(#g)"/>
+  </g>
+  <text x="690" y="245" font-size="11" fill="#888780" text-anchor="middle">每个提问都实时</text>
+
+  <!-- 交汇 -->
+  <path d="M527 146 L527 172" fill="none" stroke="#888780" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#m)"/>
+  <text x="600" y="178" font-size="11" fill="#888780" text-anchor="middle">在线检索查的就是离线建好的库 ↑</text>
+  <text x="400" y="312" font-size="12" fill="#2A2A33" text-anchor="middle">离线慢工出细活(一次),在线分秒必争(每次)——两条链路靠"知识库"这一个交汇点连起来。</text>
+
+  <defs>
+    <marker id="p" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#A78BFA"/></marker>
+    <marker id="g" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#6EE7B7"/></marker>
+    <marker id="m" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#888780"/></marker>
+  </defs>
+</svg>
