@@ -7,7 +7,7 @@
 中文渲染:用 reportlab 内置的 STSong-Light CID 字体,跨平台(macOS/Linux 通用),
 无需任何外部字体文件;pypdf 也能正确抽取其中的中文。
 
-用法:python scripts/generate_synthetic_data.py
+用法:python3 scripts/generate_synthetic_data.py
 """
 
 import sys
@@ -139,7 +139,7 @@ def main() -> None:
     generate_insurance_policy()
     generate_claim_guide()
     generate_product_brochure()
-    print("\n🎉 合成数据生成完成！下一步：python scripts/ask.py \"等待期是多少天?\"")
+    print("\n🎉 合成数据生成完成！下一步：python3 scripts/ask.py \"等待期是多少天?\"")
 
 
 if __name__ == "__main__":

@@ -9,13 +9,15 @@
 
 ## 运行
 
+> macOS / Linux 用 `python3` / `pip3`;Windows 用 `python` / `pip`(或 `py -3`)。跑不通看 [TROUBLESHOOTING.md](../../TROUBLESHOOTING.md)。
+
 ```bash
 # 玩具版:零依赖,看粗排怎么排错
-python rerank_demo.py
+python3 rerank_demo.py
 
 # 真实版:装库后跑,看 Cross-Encoder 把正确条款排回第一
-pip install sentence-transformers
-python real_rerank.py
+pip3 install sentence-transformers
+python3 real_rerank.py
 ```
 
 `rerank_demo.py` 预期输出:

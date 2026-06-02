@@ -9,9 +9,11 @@
 
 ## 运行
 
+> macOS / Linux 用 `python3` / `pip3`;Windows 用 `python` / `pip`(或 `py -3`)。跑不通看 [TROUBLESHOOTING.md](../../TROUBLESHOOTING.md)。
+
 ```bash
 # 零依赖,直接跑
-python bm25_demo.py
+python3 bm25_demo.py
 ```
 
 预期输出(节选):

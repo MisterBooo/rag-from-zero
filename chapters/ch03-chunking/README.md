@@ -10,14 +10,16 @@
 
 ## 运行
 
+> macOS / Linux 用 `python3` / `pip3`;Windows 用 `python` / `pip`(或 `py -3`)。跑不通看 [TROUBLESHOOTING.md](../../TROUBLESHOOTING.md)。
+
 ```bash
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 
 # 准备一份 PDF 命名为 your_doc.pdf,然后:
-python chunk_demo.py
+python3 chunk_demo.py
 
 # 复现核辐射事故:
-python reproduce-disaster.py
+python3 reproduce-disaster.py
 ```
 
 ## 文件说明

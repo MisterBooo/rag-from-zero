@@ -3,7 +3,7 @@ RAG 教程第 3 章 - 基础切分演示
 
 用法:
     1. 准备一份 PDF 文件,命名为 your_doc.pdf 放到当前目录
-    2. python chunk_demo.py
+    2. python3 chunk_demo.py   # macOS / Linux;Windows: python chunk_demo.py
 
 对应文章:https://www.wsxdmx.com/projects/rag-system/c/03-chunking
 """
@@ -14,8 +14,17 @@ from pathlib import Path
 try:
     from langchain_community.document_loaders import PyPDFLoader
     from langchain.text_splitter import RecursiveCharacterTextSplitter
-except ImportError:
-    print("缺少依赖,请运行:pip install langchain langchain-community pypdf")
+except ImportError as e:
+    print(f"❌ 缺少依赖({e.name}),装好再跑:")
+    print("")
+    print("  macOS / Linux:  pip3 install -r requirements.txt")
+    print("  Windows:        pip install -r requirements.txt")
+    print("")
+    print("  pypi 慢就加清华镜像:")
+    print("    pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple")
+    print("")
+    print("  报 SSL: CERTIFICATE_VERIFY_FAILED(python.org 官方包):")
+    print("    /Applications/Python\\ 3.13/Install\\ Certificates.command  # 3.13 换成你的版本")
     sys.exit(1)
 
 

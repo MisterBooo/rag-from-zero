@@ -9,9 +9,11 @@
 
 ## 运行
 
+> macOS / Linux 用 `python3` / `pip3`;Windows 用 `python` / `pip`(或 `py -3`)。跑不通看 [TROUBLESHOOTING.md](../../TROUBLESHOOTING.md)。
+
 ```bash
 # 不需要装任何库、不需要 API key
-python mini_rag_pipeline.py
+python3 mini_rag_pipeline.py
 ```
 
 预期输出:

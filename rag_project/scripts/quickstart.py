@@ -4,7 +4,7 @@
 只依赖 openai / pypdf / rich,跑得飞快,用来确认「环境通了、能跑出答案」。
 想看完整的向量检索 + 重排 + 引用,请用 build_index.py + ask.py。
 
-用法:python scripts/quickstart.py "等待期是多少天?"
+用法:python3 scripts/quickstart.py "等待期是多少天?"
 """
 
 import sys
@@ -76,7 +76,7 @@ def ask_llm(query: str, contexts: list[dict]) -> str:
 
 def main() -> None:
     if len(sys.argv) < 2:
-        console.print('用法: [bold]python scripts/quickstart.py "你的问题"[/bold]')
+        console.print('用法: [bold]python3 scripts/quickstart.py "你的问题"[/bold]')
         sys.exit(1)
 
     validate_config()
@@ -85,7 +85,7 @@ def main() -> None:
     console.print("📚 加载文档…")
     docs = load_all_pdfs()
     if not docs:
-        console.print("[red]❌ data/sample_docs/ 下没有 PDF,请先运行:python scripts/generate_synthetic_data.py[/red]")
+        console.print("[red]❌ data/sample_docs/ 下没有 PDF,请先运行:python3 scripts/generate_synthetic_data.py[/red]")
         sys.exit(1)
 
     console.print("✂️  切分…")

@@ -1,7 +1,7 @@
 """
 RAG 教程第 2 章 - 端到端迷你 RAG 骨架(零依赖)
 
-不需要装任何库、不需要 API key,直接 python mini_rag_pipeline.py 就能跑。
+不需要装任何库、不需要 API key,直接 python3 mini_rag_pipeline.py 就能跑。
 把"离线建库 + 在线问答"两条链路各写成几个函数——骨架和真实系统一样,
 差别只在每一块的工程化深度(后面章节逐块替换)。
 

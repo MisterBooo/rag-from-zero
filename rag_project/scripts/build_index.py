@@ -6,7 +6,7 @@
 依赖:sentence-transformers(首次会下载 bge-m3,约 2GB)+ chromadb。
 不需要 DeepSeek key(建库只用本地 Embedding 模型)。
 
-用法:python scripts/build_index.py
+用法:python3 scripts/build_index.py
 """
 
 import sys
@@ -25,7 +25,7 @@ def main() -> None:
     if not any(DATA_DIR.glob("*.pdf")):
         console.print(
             "[red]❌ data/sample_docs/ 下没有 PDF。[/red]\n"
-            "   先生成测试数据:python scripts/generate_synthetic_data.py"
+            "   先生成测试数据:python3 scripts/generate_synthetic_data.py"
         )
         sys.exit(1)
 
@@ -38,7 +38,7 @@ def main() -> None:
     total = pipe.store.count()
     console.print(f"\n✅ 建库完成:本次写入 [bold]{n}[/bold] 个 chunk,库中共 [bold]{total}[/bold] 个。")
     console.print(f"[dim]向量库位置:{CHROMA_DIR}[/dim]")
-    console.print('\n下一步:python scripts/ask.py "等待期是多少天?"')
+    console.print('\n下一步:python3 scripts/ask.py "等待期是多少天?"')
 
 
 if __name__ == "__main__":

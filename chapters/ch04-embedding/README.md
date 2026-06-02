@@ -9,13 +9,15 @@
 
 ## 运行
 
+> macOS / Linux 用 `python3` / `pip3`;Windows 用 `python` / `pip`(或 `py -3`)。跑不通看 [TROUBLESHOOTING.md](../../TROUBLESHOOTING.md)。
+
 ```bash
 # 玩具版:零依赖,直接跑,看清"不懂近义词"的硬伤
-python toy_embedding.py
+python3 toy_embedding.py
 
 # 真实版:装库后跑,看"索赔方法"也能匹配上"理赔"
-pip install sentence-transformers
-python real_embedding.py
+pip3 install sentence-transformers
+python3 real_embedding.py
 ```
 
 `toy_embedding.py` 预期输出:

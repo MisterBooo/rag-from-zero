@@ -1,14 +1,24 @@
 """
 RAG 教程第 4 章 - 真实 Embedding(用开源 BGE)
 
-需要装库:pip install sentence-transformers
+需要装库(macOS / Linux):pip3 install sentence-transformers
+        (Windows:pip install sentence-transformers)
 首次运行会自动下载模型权重(几百 MB),需要联网。
 
 和玩具版对比:这里 "索赔方法" 会和 "理赔流程" 一样拿到高分,因为模型学过它们语义相近。
 
 对应文章:https://www.wsxdmx.com/projects/rag-system/c/04-embedding
 """
-from sentence_transformers import SentenceTransformer, util
+import sys
+
+try:
+    from sentence_transformers import SentenceTransformer, util
+except ImportError as e:
+    print(f"❌ 缺少依赖({e.name}),装好再跑:")
+    print("  macOS / Linux:  pip3 install sentence-transformers")
+    print("  Windows:        pip install sentence-transformers")
+    print("  pypi 慢:        pip3 install sentence-transformers -i https://pypi.tuna.tsinghua.edu.cn/simple")
+    sys.exit(1)
 
 # 中文场景常用的开源模型;按需换成 bge-large-zh / gte / e5 等(见正文选型表)
 model = SentenceTransformer("BAAI/bge-base-zh-v1.5")

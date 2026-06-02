@@ -1,7 +1,8 @@
 """
 RAG 教程第 6 章 - 真实精排(用开源 Cross-Encoder)
 
-需要装库:pip install sentence-transformers
+需要装库(macOS / Linux):pip3 install sentence-transformers
+        (Windows:pip install sentence-transformers)
 首次运行会自动下载模型权重,需要联网。
 
 和玩具粗排对比:这里「保险责任」(真正回答了"能不能赔")会被排到第一,
@@ -9,7 +10,16 @@ RAG 教程第 6 章 - 真实精排(用开源 Cross-Encoder)
 
 对应文章:https://www.wsxdmx.com/projects/rag-system/c/06-reranking
 """
-from sentence_transformers import CrossEncoder
+import sys
+
+try:
+    from sentence_transformers import CrossEncoder
+except ImportError as e:
+    print(f"❌ 缺少依赖({e.name}),装好再跑:")
+    print("  macOS / Linux:  pip3 install sentence-transformers")
+    print("  Windows:        pip install sentence-transformers")
+    print("  pypi 慢:        pip3 install sentence-transformers -i https://pypi.tuna.tsinghua.edu.cn/simple")
+    sys.exit(1)
 
 # 开源中文 reranker;按需替换为 bge-reranker-large / MiniLM-cross / gte-reranker
 reranker = CrossEncoder("BAAI/bge-reranker-base")

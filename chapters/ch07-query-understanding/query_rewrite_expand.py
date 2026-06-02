@@ -1,7 +1,7 @@
 """
 RAG 教程第 7 章 - Query 重写 + 扩写(零依赖)
 
-不需要装任何库,直接 python query_rewrite_expand.py 就能跑。
+不需要装任何库,直接 python3 query_rewrite_expand.py 就能跑。
 目的:亲眼看到「重写」(去口语)和「扩写」(加同义词)各自怎么把原本检索不到的问题救回来。
 
 对应文章:https://www.wsxdmx.com/projects/rag-system/c/07-query-understanding

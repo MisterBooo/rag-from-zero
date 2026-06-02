@@ -4,11 +4,11 @@
      → 带引用的答案生成(第9章)。
 
 前置:
-  1) python scripts/generate_synthetic_data.py   # 造测试 PDF
-  2) python scripts/build_index.py                # 建向量库(只需一次)
+  1) python3 scripts/generate_synthetic_data.py   # 造测试 PDF
+  2) python3 scripts/build_index.py                # 建向量库(只需一次)
   3) cp .env.example .env 并填入 DEEPSEEK_API_KEY  # 生成答案需要
 
-用法:python scripts/ask.py "等待期是多少天?"
+用法:python3 scripts/ask.py "等待期是多少天?"
 
 提示:想 30 秒先跑通、不建库不下模型,用 scripts/quickstart.py。
 """
@@ -27,7 +27,7 @@ console = Console()
 
 def main() -> None:
     if len(sys.argv) < 2:
-        console.print('用法: [bold]python scripts/ask.py "你的问题"[/bold]')
+        console.print('用法: [bold]python3 scripts/ask.py "你的问题"[/bold]')
         sys.exit(1)
 
     validate_config()  # 没配 DEEPSEEK_API_KEY 会给出清晰中文提示
@@ -39,8 +39,8 @@ def main() -> None:
     pipe = RAGPipeline()
     if pipe.store.count() == 0:
         console.print(
-            "[yellow]⚠️  向量库是空的,请先建库:python scripts/build_index.py[/yellow]\n"
-            '   (或先用 python scripts/quickstart.py "你的问题" 免建库快速体验)'
+            "[yellow]⚠️  向量库是空的,请先建库:python3 scripts/build_index.py[/yellow]\n"
+            '   (或先用 python3 scripts/quickstart.py "你的问题" 免建库快速体验)'
         )
         sys.exit(1)
 

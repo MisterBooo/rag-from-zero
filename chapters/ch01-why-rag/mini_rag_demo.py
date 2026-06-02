@@ -1,7 +1,7 @@
 """
 RAG 教程第 1 章 - 20 行迷你 RAG(零依赖)
 
-不需要装任何库、不需要 API key,直接 python mini_rag_demo.py 就能跑。
+不需要装任何库、不需要 API key,直接 python3 mini_rag_demo.py 就能跑。
 目的:亲眼看到"检索到资料就照着答,没检索到就只能瞎猜(幻觉)"。
 
 对应文章:https://www.wsxdmx.com/projects/rag-system/c/01-why-rag

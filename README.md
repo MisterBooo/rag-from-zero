@@ -55,13 +55,23 @@ A complete, runnable, Chinese RAG tutorial — built by hand, no LangChain magic
 
 ## ⚡ 5 分钟跑起来
 
+> 需要 **Python 3.10+** 和 git。下面命令在 **macOS / Linux** 上用 `python3` / `pip3`,
+> 在 **Windows** 上用 `python` / `pip`(或 `py -3`)。
+> 跑不通?跳到下面的 [🐛 跑不通?常见问题](#-跑不通常见问题),或看 [TROUBLESHOOTING.md](TROUBLESHOOTING.md)。
+
 ### 30 秒:先看一个真实事故(零配置,不用 key)
 
 ```bash
 git clone https://github.com/MisterBooo/rag-from-zero.git
 cd rag-from-zero/chapters/ch03-chunking
-pip install -r requirements.txt
-python reproduce-disaster.py
+
+# 装依赖(macOS / Linux)
+pip3 install -r requirements.txt
+# Windows: pip install -r requirements.txt
+
+# 跑事故复现(macOS / Linux)
+python3 reproduce-disaster.py
+# Windows: python reproduce-disaster.py
 ```
 
 你会看到(这是真实生产事故的最小复现,输出是确定的):
@@ -87,19 +97,40 @@ Chunk 1: :(1)战争 (2)核辐射
 
 ```bash
 cd rag-from-zero/rag_project
+# 下面用 macOS / Linux 的 python3 / pip3;Windows 换成 python / pip(或 py -3)
 
 # 先跑零依赖冒烟测试,确认逻辑没问题(不需要 key、不下模型)
-python tests/smoke_test.py
+python3 tests/smoke_test.py
 
 # 完整链路:造数据 → 建向量库 → 提问(需 DeepSeek key + 本地 Embedding)
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 cp .env.example .env            # 填入 DEEPSEEK_API_KEY
-python scripts/generate_synthetic_data.py
-python scripts/build_index.py
-python scripts/ask.py "核辐射在保障范围内吗?"
+python3 scripts/generate_synthetic_data.py
+python3 scripts/build_index.py
+python3 scripts/ask.py "核辐射在保障范围内吗?"
 ```
 
 `ask.py` 会打印「提问 → 答案 → 来源」,答案基于检索到的真实条款生成并标注出处。详细路径(含「30 秒免建库快速体验」)见 **[rag_project/README.md](rag_project/README.md)**。
+
+### 🐛 跑不通?常见问题
+
+**`zsh: command not found: pip` / `python`** —— 你多半在 macOS 上,系统命令是 `pip3` / `python3`(不是 `pip` / `python`)。直接用上面的 macOS / Linux 命令即可。
+
+**`SSL: CERTIFICATE_VERIFY_FAILED`** —— 你装的是 python.org 官方安装包,默认没装 CA 证书。在终端跑一次(把 `3.13` 换成你的实际版本):
+
+```bash
+/Applications/Python\ 3.13/Install\ Certificates.command
+```
+
+装完再重新 `pip3 install`。
+
+**pypi 太慢 / 卡住** —— 换清华镜像:
+
+```bash
+pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+更全的排查(含 Windows / Linux)见 **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)**。
 
 ---
 
@@ -195,7 +226,7 @@ rag-from-zero/
     └── tests/                      ← 零依赖冒烟测试 + 评估集
 ```
 
-**每章自包含** —— `cd chapters/ch03-chunking && pip install -r requirements.txt && python chunk_demo.py` 就能跑。
+**每章自包含** —— `cd chapters/ch03-chunking && pip3 install -r requirements.txt && python3 chunk_demo.py` 就能跑(Windows 用 `pip` / `python`)。
 
 ---
 

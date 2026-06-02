@@ -7,7 +7,7 @@
 目的:核查整条装配链路的逻辑是否正确——这是项目里除了「模型推理 / API 调用」
 之外的全部代码。CI 里跑它,几秒钟就能确认代码没写错。
 
-用法:python tests/smoke_test.py   (仅需 python-dotenv;不需要其它依赖)
+用法:python3 tests/smoke_test.py   (仅需 python-dotenv;不需要其它依赖)
 """
 
 import sys

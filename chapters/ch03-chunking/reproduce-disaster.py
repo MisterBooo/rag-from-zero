@@ -8,8 +8,17 @@ import sys
 
 try:
     from langchain.text_splitter import RecursiveCharacterTextSplitter
-except ImportError:
-    print("缺少依赖,请运行:pip install langchain langchain-community pypdf")
+except ImportError as e:
+    print(f"❌ 缺少依赖({e.name}),装好再跑:")
+    print("")
+    print("  macOS / Linux:  pip3 install -r requirements.txt")
+    print("  Windows:        pip install -r requirements.txt")
+    print("")
+    print("  pypi 慢就加清华镜像:")
+    print("    pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple")
+    print("")
+    print("  报 SSL: CERTIFICATE_VERIFY_FAILED(python.org 官方包):")
+    print("    /Applications/Python\\ 3.13/Install\\ Certificates.command  # 3.13 换成你的版本")
     sys.exit(1)
 
 
