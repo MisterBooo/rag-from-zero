@@ -1,6 +1,6 @@
 # 第 2 章:RAG 整体架构
 
-> 配套文章详解 → [网站文章](https://www.wsxdmx.com/projects/rag-system/c/02-architecture)
+> 配套文章详解 → [网站文章](https://www.wushixiongai.com/projects/rag-system/c/02-architecture)
 
 ## 你将学到
 
@@ -30,4 +30,4 @@ python3 mini_rag_pipeline.py
 
 ## 配套文章
 
-→ [www.wsxdmx.com/projects/rag-system/c/02-architecture](https://www.wsxdmx.com/projects/rag-system/c/02-architecture)
+→ [www.wushixiongai.com/projects/rag-system/c/02-architecture](https://www.wushixiongai.com/projects/rag-system/c/02-architecture)

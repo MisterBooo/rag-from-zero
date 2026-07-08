@@ -1,6 +1,6 @@
 # 第 7 章:Query 理解与改写
 
-> 配套文章详解 → [网站文章](https://www.wsxdmx.com/projects/rag-system/c/07-query-understanding)
+> 配套文章详解 → [网站文章](https://www.wushixiongai.com/projects/rag-system/c/07-query-understanding)
 
 ## 你将学到
 
@@ -32,4 +32,4 @@ python3 query_rewrite_expand.py
 
 ## 配套文章
 
-→ [www.wsxdmx.com/projects/rag-system/c/07-query-understanding](https://www.wsxdmx.com/projects/rag-system/c/07-query-understanding)
+→ [www.wushixiongai.com/projects/rag-system/c/07-query-understanding](https://www.wushixiongai.com/projects/rag-system/c/07-query-understanding)

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="340" viewBox="0 0 800 340" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif">
   <rect width="800" height="340" fill="#FFFFFF"/>
-  <text x="14" y="22" font-size="12" fill="#534AB7" opacity="0.12">www.wsxdmx.com</text>
+  <text x="14" y="22" font-size="12" fill="#534AB7" opacity="0.12">www.wushixiongai.com</text>
   <text x="786" y="328" font-size="12" fill="#534AB7" opacity="0.12" text-anchor="end">吴师兄大模型</text>
   <text x="400" y="34" font-size="18" font-weight="700" fill="#2A2A33" text-anchor="middle">RAG 的两条链路:一条"准备",一条"现做"</text>
 

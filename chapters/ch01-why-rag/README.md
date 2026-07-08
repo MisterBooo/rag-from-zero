@@ -1,6 +1,6 @@
 # 第 1 章:为什么做 RAG
 
-> 配套文章详解 → [网站文章](https://www.wsxdmx.com/projects/rag-system/c/01-why-rag)
+> 配套文章详解 → [网站文章](https://www.wushixiongai.com/projects/rag-system/c/01-why-rag)
 
 ## 你将学到
 
@@ -28,4 +28,4 @@ python3 mini_rag_demo.py
 
 ## 配套文章
 
-→ [www.wsxdmx.com/projects/rag-system/c/01-why-rag](https://www.wsxdmx.com/projects/rag-system/c/01-why-rag)
+→ [www.wushixiongai.com/projects/rag-system/c/01-why-rag](https://www.wushixiongai.com/projects/rag-system/c/01-why-rag)

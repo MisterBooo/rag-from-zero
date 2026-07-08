@@ -1,7 +1,7 @@
 # RAG From Zero · 端到端项目
 
 > 一个**真正能跑**的 RAG 系统:DeepSeek + ChromaDB + bge-m3,核心代码全手写,**没有 LangChain**。
-> 每个模块对应教程一章,读文章 + 看代码效果最好 → [www.wsxdmx.com/projects/rag-system](https://www.wsxdmx.com/projects/rag-system)
+> 每个模块对应教程一章,读文章 + 看代码效果最好 → [www.wushixiongai.com/projects/rag-system](https://www.wushixiongai.com/projects/rag-system)
 
 ---
 
@@ -105,13 +105,13 @@ rag_project/
 
 | 模块 | 对应文章 |
 |------|---------|
-| `loader.py` / `chunker.py` | [第 3 章 · 文档预处理与切分](https://www.wsxdmx.com/projects/rag-system/c/03-chunking) |
-| `embedder.py` | [第 4 章 · Embedding 选型](https://www.wsxdmx.com/projects/rag-system/c/04-embedding) |
-| `vectorstore.py` / `retriever.py` | [第 5 章 · 检索召回](https://www.wsxdmx.com/projects/rag-system/c/05-retrieval) |
-| `reranker.py` | [第 6 章 · 重排与检索优化](https://www.wsxdmx.com/projects/rag-system/c/06-reranking) |
-| `query_processor.py` | [第 7 章 · Query 理解与改写](https://www.wsxdmx.com/projects/rag-system/c/07-query-understanding) |
-| `generator.py` | [第 9 章 · 上下文问答与引用溯源](https://www.wsxdmx.com/projects/rag-system/c/09-citation) |
-| `tests/sample_qa.jsonl` | [第 10 章 · 系统评估与上线优化](https://www.wsxdmx.com/projects/rag-system/c/10-evaluation) |
+| `loader.py` / `chunker.py` | [第 3 章 · 文档预处理与切分](https://www.wushixiongai.com/projects/rag-system/c/03-chunking) |
+| `embedder.py` | [第 4 章 · Embedding 选型](https://www.wushixiongai.com/projects/rag-system/c/04-embedding) |
+| `vectorstore.py` / `retriever.py` | [第 5 章 · 检索召回](https://www.wushixiongai.com/projects/rag-system/c/05-retrieval) |
+| `reranker.py` | [第 6 章 · 重排与检索优化](https://www.wushixiongai.com/projects/rag-system/c/06-reranking) |
+| `query_processor.py` | [第 7 章 · Query 理解与改写](https://www.wushixiongai.com/projects/rag-system/c/07-query-understanding) |
+| `generator.py` | [第 9 章 · 上下文问答与引用溯源](https://www.wushixiongai.com/projects/rag-system/c/09-citation) |
+| `tests/sample_qa.jsonl` | [第 10 章 · 系统评估与上线优化](https://www.wushixiongai.com/projects/rag-system/c/10-evaluation) |
 
 ## 测试数据说明
 

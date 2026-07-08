@@ -1,6 +1,6 @@
 # 第 6 章:重排(Rerank)与检索优化
 
-> 配套文章详解 → [网站文章](https://www.wsxdmx.com/projects/rag-system/c/06-reranking)
+> 配套文章详解 → [网站文章](https://www.wushixiongai.com/projects/rag-system/c/06-reranking)
 
 ## 你将学到
 
@@ -36,4 +36,4 @@ python3 real_rerank.py
 
 ## 配套文章
 
-→ [www.wsxdmx.com/projects/rag-system/c/06-reranking](https://www.wsxdmx.com/projects/rag-system/c/06-reranking)
+→ [www.wushixiongai.com/projects/rag-system/c/06-reranking](https://www.wushixiongai.com/projects/rag-system/c/06-reranking)

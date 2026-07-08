@@ -1,6 +1,6 @@
 # 第 4 章:Embedding 选型与向量化
 
-> 配套文章详解 → [网站文章](https://www.wsxdmx.com/projects/rag-system/c/04-embedding)
+> 配套文章详解 → [网站文章](https://www.wushixiongai.com/projects/rag-system/c/04-embedding)
 
 ## 你将学到
 
@@ -39,4 +39,4 @@ query = 保险理赔
 
 ## 配套文章
 
-→ [www.wsxdmx.com/projects/rag-system/c/04-embedding](https://www.wsxdmx.com/projects/rag-system/c/04-embedding)
+→ [www.wushixiongai.com/projects/rag-system/c/04-embedding](https://www.wushixiongai.com/projects/rag-system/c/04-embedding)

@@ -8,11 +8,11 @@ A complete, runnable, Chinese RAG tutorial — built by hand, no LangChain magic
 
 [![Stars](https://img.shields.io/github/stars/MisterBooo/rag-from-zero?style=social)](https://github.com/MisterBooo/rag-from-zero)
 [![Forks](https://img.shields.io/github/forks/MisterBooo/rag-from-zero?style=social)](https://github.com/MisterBooo/rag-from-zero/fork)
-[![Chapters](https://img.shields.io/badge/教程-10%20章%20%2B%20附录-blue)](https://www.wsxdmx.com/projects/rag-system)
+[![Chapters](https://img.shields.io/badge/教程-10%20章%20%2B%20附录-blue)](https://www.wushixiongai.com/projects/rag-system)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![中文文档](https://img.shields.io/badge/中文文档-完整-orange)](https://www.wsxdmx.com/projects/rag-system)
+[![中文文档](https://img.shields.io/badge/中文文档-完整-orange)](https://www.wushixiongai.com/projects/rag-system)
 
-🌐 [在网站看完整教程](https://www.wsxdmx.com/projects/rag-system) ·
+🌐 [在网站看完整教程](https://www.wushixiongai.com/projects/rag-system) ·
 💻 [章节速览](#-章节速览) ·
 ⚡ [5 分钟跑起来](#-5-分钟跑起来) ·
 📱 [关于作者](#关于作者) · ⭐ Star 一下支持
@@ -29,15 +29,15 @@ A complete, runnable, Chinese RAG tutorial — built by hand, no LangChain magic
 
 ## 这个项目是什么
 
-我是 [@MisterBooo](https://github.com/MisterBooo),5 年前我做了 [LeetCodeAnimation](https://github.com/MisterBooo/LeetCodeAnimation)(**76.7k stars**,用动画讲算法)。
+我是 [@MisterBooo](https://github.com/MisterBooo)，5 年前我做了 [LeetCodeAnimation](https://github.com/MisterBooo/LeetCodeAnimation)（用动画讲算法）。
 
-2026 年,我把同样的「图解 + 实战」方法用在大模型上,做了这个 RAG 教程项目:**10 章 + 附录,每章配可运行代码、原创图解和大厂面试题,外加一个完整的端到端项目。**
+2026 年，我把同样的「图解 + 实战」方法用在大模型上，做了这个 RAG 教程项目：**10 章 + 附录，每章配可运行代码、原创图解和大厂面试题，外加一个完整的端到端项目。**
 
 ### 给谁看?
 
-**有编程基础(Python 会写、命令行能用)、但 RAG / Agent / 大模型应用零基础**的工程师。
+**有编程基础（Python 会写、命令行能用）、但 RAG / Agent / 大模型应用零基础**的工程师。
 
-- ❌ 不适合:完全不会编程的初学者
+- ❌ 不适合：完全不会编程的初学者
 - ❌ 不适合:已经做过 RAG 项目的资深工程师
 - ✅ 适合:**想转大模型岗、但被市面上「原理太抽象 / 代码太黑盒」的教程劝退的工程师**
 
@@ -180,7 +180,7 @@ LangChain 把一切都封装好了,**结果是你跑通了,却不知道里面发
 - **第 5 章** · 用户问「推销」→ 文档里写的是「销售」,关键词检索召回为 0
 - **第 5 章** · 录播视频检索为 0 → 视频内容根本不在向量库里,只有文件名
 
-[在网站读完整事故复盘 →](https://www.wsxdmx.com/projects/rag-system)
+[在网站读完整事故复盘 →](https://www.wushixiongai.com/projects/rag-system)
 
 ---
 
@@ -188,17 +188,17 @@ LangChain 把一切都封装好了,**结果是你跑通了,却不知道里面发
 
 | # | 主题 | 你将学到 / 真实事故 | 代码 | 文章 |
 |---|------|---------------------|:---:|:---:|
-| 1 | 为什么做 RAG | 「现金价值公式被编」事故;20 行迷你 RAG 跑通核心机制 | [→](chapters/ch01-why-rag/) | [→](https://www.wsxdmx.com/projects/rag-system/c/01-why-rag) |
-| 2 | RAG 整体架构 | 四大模块怎么联动;为什么大模型反而最省心 | [→](chapters/ch02-architecture/) | [→](https://www.wsxdmx.com/projects/rag-system/c/02-architecture) |
-| 3 | 文档预处理与切分 | 「核辐射条款被切散」事故;召回率从 67% 提到 91% | [→](chapters/ch03-chunking/) | [→](https://www.wsxdmx.com/projects/rag-system/c/03-chunking) |
-| 4 | Embedding 选型 | bge-m3 / OpenAI / 国产模型怎么选;何时该微调 | [→](chapters/ch04-embedding/) | [→](https://www.wsxdmx.com/projects/rag-system/c/04-embedding) |
-| 5 | 检索召回 · 混合检索 | 「推销 vs 销售召回为 0」事故;手写 BM25 + 向量融合 | [→](chapters/ch05-retrieval/) | [→](https://www.wsxdmx.com/projects/rag-system/c/05-retrieval) |
-| 6 | 重排与检索优化 | Cross-Encoder 凭什么更准;精排慢了怎么提速 | [→](chapters/ch06-reranking/) | [→](https://www.wsxdmx.com/projects/rag-system/c/06-reranking) |
-| 7 | Query 理解与改写 | HYDE「先让模型瞎答一个」为什么反而提升召回 | [→](chapters/ch07-query-understanding/) | [→](https://www.wsxdmx.com/projects/rag-system/c/07-query-understanding) |
-| 8 | 多轮对话与记忆 | 把「那它过了还能退吗」里的「它」补全成可检索的问题 | [→](chapters/ch08-memory/) | [→](https://www.wsxdmx.com/projects/rag-system/c/08-memory) |
-| 9 | 上下文问答与引用溯源 | 基于资料生成、没依据就拒答、每个结论标出处 | [→](chapters/ch09-citation/) | [→](https://www.wsxdmx.com/projects/rag-system/c/09-citation) |
-| 10 | 系统评估与上线优化 | 「没有评估集的优化都是自嗨」;Recall@k / MRR | [→](chapters/ch10-evaluation/) | [→](https://www.wsxdmx.com/projects/rag-system/c/10-evaluation) |
-| 附录 | 写进简历 & 面试应答 | 简历填空模板 + STAR 话术 | [→](chapters/appendix-resume-interview/) | [→](https://www.wsxdmx.com/projects/rag-system/c/appendix-resume-interview) |
+| 1 | 为什么做 RAG | 「现金价值公式被编」事故;20 行迷你 RAG 跑通核心机制 | [→](chapters/ch01-why-rag/) | [→](https://www.wushixiongai.com/projects/rag-system/c/01-why-rag) |
+| 2 | RAG 整体架构 | 四大模块怎么联动;为什么大模型反而最省心 | [→](chapters/ch02-architecture/) | [→](https://www.wushixiongai.com/projects/rag-system/c/02-architecture) |
+| 3 | 文档预处理与切分 | 「核辐射条款被切散」事故;召回率从 67% 提到 91% | [→](chapters/ch03-chunking/) | [→](https://www.wushixiongai.com/projects/rag-system/c/03-chunking) |
+| 4 | Embedding 选型 | bge-m3 / OpenAI / 国产模型怎么选;何时该微调 | [→](chapters/ch04-embedding/) | [→](https://www.wushixiongai.com/projects/rag-system/c/04-embedding) |
+| 5 | 检索召回 · 混合检索 | 「推销 vs 销售召回为 0」事故;手写 BM25 + 向量融合 | [→](chapters/ch05-retrieval/) | [→](https://www.wushixiongai.com/projects/rag-system/c/05-retrieval) |
+| 6 | 重排与检索优化 | Cross-Encoder 凭什么更准;精排慢了怎么提速 | [→](chapters/ch06-reranking/) | [→](https://www.wushixiongai.com/projects/rag-system/c/06-reranking) |
+| 7 | Query 理解与改写 | HYDE「先让模型瞎答一个」为什么反而提升召回 | [→](chapters/ch07-query-understanding/) | [→](https://www.wushixiongai.com/projects/rag-system/c/07-query-understanding) |
+| 8 | 多轮对话与记忆 | 把「那它过了还能退吗」里的「它」补全成可检索的问题 | [→](chapters/ch08-memory/) | [→](https://www.wushixiongai.com/projects/rag-system/c/08-memory) |
+| 9 | 上下文问答与引用溯源 | 基于资料生成、没依据就拒答、每个结论标出处 | [→](chapters/ch09-citation/) | [→](https://www.wushixiongai.com/projects/rag-system/c/09-citation) |
+| 10 | 系统评估与上线优化 | 「没有评估集的优化都是自嗨」;Recall@k / MRR | [→](chapters/ch10-evaluation/) | [→](https://www.wushixiongai.com/projects/rag-system/c/10-evaluation) |
+| 附录 | 写进简历 & 面试应答 | 简历填空模板 + STAR 话术 | [→](chapters/appendix-resume-interview/) | [→](https://www.wushixiongai.com/projects/rag-system/c/appendix-resume-interview) |
 
 ---
 
@@ -234,7 +234,7 @@ rag-from-zero/
 
 ### 简历可以怎么写
 
-完整 3 种段位写法见 → [项目案例库 · RAG 智能问答系统](https://www.wsxdmx.com/projects/rag-system)。节选高级段位:
+完整 3 种段位写法见 → [项目案例库 · RAG 智能问答系统](https://www.wushixiongai.com/projects/rag-system)。节选高级段位:
 
 > **保险智能客服 RAG 系统**(技术负责人 / 团队 5 人)
 >
@@ -246,17 +246,17 @@ rag-from-zero/
 
 ### 面试可以怎么讲
 
-每章末尾配 5 道大厂真题(共 50 道),按「为什么这么设计 / 踩过什么坑 / 怎么解决」的思路给讲法。
+每章末尾配 5 道大厂真题（共 50 道），按「为什么这么设计 / 踩过什么坑 / 怎么解决」的思路给讲法。
 
-更多 → [大模型面试题库 · 840 道大厂真题](https://www.wsxdmx.com/questions)
+更多 → [大模型面试题库](https://www.wushixiongai.com/questions)
 
 ---
 
 ## 关于作者
 
-- 📚 [LeetCodeAnimation](https://github.com/MisterBooo/LeetCodeAnimation) —— **76.7k stars**,用动画讲算法
-- 🌐 [wsxdmx.com](https://www.wsxdmx.com) —— 大模型面试题库 · 840 道大厂真题
-- 📱 公众号 **「吴师兄学大模型」** —— 给想进大厂大模型岗的工程师:每天一题 + 项目拆解
+- 📚 [LeetCodeAnimation](https://github.com/MisterBooo/LeetCodeAnimation) —— 用动画讲算法
+- 🌐 [wushixiongai.com](https://www.wushixiongai.com) —— 大模型面试题库
+- 📱 公众号 **「吴师兄学大模型」** —— 给想进大厂大模型岗的工程师：每天一题 + 项目拆解
 
 ---
 

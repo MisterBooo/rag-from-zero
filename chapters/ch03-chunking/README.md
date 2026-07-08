@@ -1,6 +1,6 @@
 # 第 3 章:文档预处理与切分
 
-> 配套文章详解 → [网站文章](https://www.wsxdmx.com/projects/rag-system/c/03-chunking)
+> 配套文章详解 → [网站文章](https://www.wushixiongai.com/projects/rag-system/c/03-chunking)
 
 ## 你将学到
 
@@ -33,4 +33,4 @@ python3 reproduce-disaster.py
 
 完整讲解(含原理 + 三代演进 + 真实事故 + 5 个工程招式)在网站:
 
-→ [www.wsxdmx.com/projects/rag-system/c/03-chunking](https://www.wsxdmx.com/projects/rag-system/c/03-chunking)
+→ [www.wushixiongai.com/projects/rag-system/c/03-chunking](https://www.wushixiongai.com/projects/rag-system/c/03-chunking)

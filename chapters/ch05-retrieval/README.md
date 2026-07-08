@@ -1,6 +1,6 @@
 # 第 5 章:检索召回 —— 混合检索(BM25 + 向量)
 
-> 配套文章详解 → [网站文章](https://www.wsxdmx.com/projects/rag-system/c/05-retrieval)
+> 配套文章详解 → [网站文章](https://www.wushixiongai.com/projects/rag-system/c/05-retrieval)
 
 ## 你将学到
 
@@ -33,4 +33,4 @@ query = 等待期多久
 
 ## 配套文章
 
-→ [www.wsxdmx.com/projects/rag-system/c/05-retrieval](https://www.wsxdmx.com/projects/rag-system/c/05-retrieval)
+→ [www.wushixiongai.com/projects/rag-system/c/05-retrieval](https://www.wushixiongai.com/projects/rag-system/c/05-retrieval)
