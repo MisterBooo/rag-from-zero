@@ -1,7 +1,8 @@
 """Query 理解与改写模块 —— 对应文章第 7 章。
 
-用户的原始问题往往口语、含糊、缺关键词。先做改写 / 扩展,再去检索,
-召回率能明显提升。对应文章:https://www.wsxdmx.com/projects/rag-system/c/07-query-understanding
+用户的原始问题往往口语、含糊、缺关键词。先做改写 / 扩展再检索,
+在查询与文档措辞不一致的样本上可能改善召回;是否提升以及延迟、成本代价,
+需要在同一评估集和运行配置下实测。对应文章:https://www.wsxdmx.com/projects/rag-system/c/07-query-understanding
 
 两条路径:
 - 有 DeepSeek key 且开启改写 → 调 LLM 做规范化改写 + 同义扩展(效果好);

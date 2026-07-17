@@ -2,7 +2,7 @@
 
 # RAG From Zero
 
-**从零做出能上线的 RAG 系统,跟着代码学,完整开源**
+**从零跑通 RAG 完整链路,跟着代码学,完整开源**
 
 A complete, runnable, Chinese RAG tutorial — built by hand, no LangChain magic.
 
@@ -31,7 +31,9 @@ A complete, runnable, Chinese RAG tutorial — built by hand, no LangChain magic
 
 我是 [@MisterBooo](https://github.com/MisterBooo)，5 年前我做了 [LeetCodeAnimation](https://github.com/MisterBooo/LeetCodeAnimation)（用动画讲算法）。
 
-2026 年，我把同样的「图解 + 实战」方法用在大模型上，做了这个 RAG 教程项目：**10 章 + 附录，每章配可运行代码、原创图解和大厂面试题，外加一个完整的端到端项目。**
+2026 年，我把同样的「图解 + 实战」方法用在大模型上，做了这个 RAG 教程项目：**10 章 + 附录，每章配可运行代码、图解和相关面试题，外加一个端到端教学项目。**
+
+> **真实性说明**：仓库使用合成保险资料。文中的「核辐射条款」「推销 vs 销售」等是可复现的教学场景，不是作者、学员或客户的真实事故；仓库也不提供可直接写进简历的固定业务指标。
 
 ### 给谁看?
 
@@ -47,8 +49,8 @@ A complete, runnable, Chinese RAG tutorial — built by hand, no LangChain magic
 |------|----------------|---------|
 | 实现方式 | LangChain 封装,跑通了不知道为啥 | **全手写**,自己实现切分 / 检索 / 重排 / Query 改写 |
 | 配套代码 | demo 玩具,clone 下来跑不通 | **完整可运行**,自带合成测试数据 |
-| 内容深度 | 偏概念,缺真实工程经验 | **每章配真实项目踩坑**(核辐射条款、推销 vs 销售…) |
-| 面试帮助 | 学完不知道怎么讲 | **每章配 5 道大厂真题** + 简历段位写法 |
+| 内容深度 | 偏概念,缺失败验证 | **每章配可运行的失败演练**(核辐射条款、推销 vs 销售…) |
+| 面试帮助 | 学完不知道怎么讲 | **每章配相关面试题** + 事实填空式简历模板 |
 | 目标读者 | 含糊不清 | **明确「半小白」**:有编程基础 + RAG 零基础 |
 
 ---
@@ -59,7 +61,7 @@ A complete, runnable, Chinese RAG tutorial — built by hand, no LangChain magic
 > 在 **Windows** 上用 `python` / `pip`(或 `py -3`)。
 > 跑不通?跳到下面的 [🐛 跑不通?常见问题](#-跑不通常见问题),或看 [TROUBLESHOOTING.md](TROUBLESHOOTING.md)。
 
-### 30 秒:先看一个真实事故(零配置,不用 key)
+### 30 秒:先看一个切分失败演练(零配置,不用 key)
 
 ```bash
 git clone https://github.com/MisterBooo/rag-from-zero.git
@@ -69,15 +71,15 @@ cd rag-from-zero/chapters/ch03-chunking
 pip3 install -r requirements.txt
 # Windows: pip install -r requirements.txt
 
-# 跑事故复现(macOS / Linux)
+# 跑失败演练(macOS / Linux)
 python3 reproduce-disaster.py
 # Windows: python reproduce-disaster.py
 ```
 
-你会看到(这是真实生产事故的最小复现,输出是确定的):
+你会看到(这是使用合成条款构造的最小失败演练,输出是确定的):
 
 ```
-=== 固定长度切分的事故现场 ===
+=== 固定长度切分的失败演练 ===
 
 Chunk 0: 本保险承保意外伤害导致的身故或残疾,但以下情况除外
 
@@ -86,10 +88,10 @@ Chunk 1: :(1)战争 (2)核辐射
 === 用户问:核辐射在保障范围内吗? ===
 → Chunk 0 只到'但以下情况除外'就断了,除外项全在 Chunk 1
 → 检索只命中 Chunk 0,模型看不到核辐射属于除外项
-→ 模型理直气壮回答'在保障范围内' → 真实场景:理赔差点出大事
+→ 模型可能回答'在保障范围内' → 残缺证据沿生成链路放大
 ```
 
-**这就是你将跟着学的真实工程问题** —— 不是 toy demo。一刀切坏了一句话,线上就出了理赔事故。
+**这就是你将跟着分析的工程风险**。它不是线上事故记录,而是用于验证「切分破坏语义」的教学场景。
 
 ### 完整版:跑通一个真正的 RAG 系统
 
@@ -110,7 +112,7 @@ python3 scripts/build_index.py
 python3 scripts/ask.py "核辐射在保障范围内吗?"
 ```
 
-`ask.py` 会打印「提问 → 答案 → 来源」,答案基于检索到的真实条款生成并标注出处。详细路径(含「30 秒免建库快速体验」)见 **[rag_project/README.md](rag_project/README.md)**。
+`ask.py` 会打印「提问 → 答案 → 来源」,答案基于检索到的**合成条款**生成并标注出处。详细路径(含「30 秒免建库快速体验」)见 **[rag_project/README.md](rag_project/README.md)**。
 
 ### 🐛 跑不通?常见问题
 
@@ -170,29 +172,29 @@ LangChain 把一切都封装好了,**结果是你跑通了,却不知道里面发
 
 **学完是真懂 RAG,而不是只会调 LangChain 的几个 API** —— 这恰恰是面试官想确认的。
 
-### 🐛 真实项目踩坑合集
+### 🐛 工程失败演练合集
 
-每章都有 1–2 个真实保险项目踩坑案例 —— 面试时这些就是你的「故事素材」:
+每章都有可复现的合成场景。它们用于理解故障机制,**不能当作你的客户经历或项目故事**:
 
-- **第 1 章** · 没用 RAG 直接问大模型 → 模型「编造」了一套现金价值公式,差点信了
-- **第 3 章** · 固定长度切分 → 「核辐射条款」被切散,系统答「在保障范围内」,差点理赔事故
-- **第 3 章** · OCR 印章遮挡 → 「理赔限额 100 万」被读成 10 万
+- **第 1 章** · 没用 RAG 直接问大模型 → 观察无依据答案风险
+- **第 3 章** · 固定长度切分 → 「核辐射条款」被切散,观察残缺证据怎样误导生成
+- **第 3 章** · OCR 印章遮挡 → 用合成页面比较识别和人工复核方案
 - **第 5 章** · 用户问「推销」→ 文档里写的是「销售」,关键词检索召回为 0
 - **第 5 章** · 录播视频检索为 0 → 视频内容根本不在向量库里,只有文件名
 
-[在网站读完整事故复盘 →](https://www.wushixiongai.com/projects/rag-system)
+[在网站读完整失败演练 →](https://www.wushixiongai.com/projects/rag-system)
 
 ---
 
 ## 📚 章节速览
 
-| # | 主题 | 你将学到 / 真实事故 | 代码 | 文章 |
+| # | 主题 | 你将学到 / 失败演练 | 代码 | 文章 |
 |---|------|---------------------|:---:|:---:|
-| 1 | 为什么做 RAG | 「现金价值公式被编」事故;20 行迷你 RAG 跑通核心机制 | [→](chapters/ch01-why-rag/) | [→](https://www.wushixiongai.com/projects/rag-system/c/01-why-rag) |
+| 1 | 为什么做 RAG | 「现金价值公式无依据」场景;20 行迷你 RAG 跑通核心机制 | [→](chapters/ch01-why-rag/) | [→](https://www.wushixiongai.com/projects/rag-system/c/01-why-rag) |
 | 2 | RAG 整体架构 | 四大模块怎么联动;为什么大模型反而最省心 | [→](chapters/ch02-architecture/) | [→](https://www.wushixiongai.com/projects/rag-system/c/02-architecture) |
-| 3 | 文档预处理与切分 | 「核辐射条款被切散」事故;召回率从 67% 提到 91% | [→](chapters/ch03-chunking/) | [→](https://www.wushixiongai.com/projects/rag-system/c/03-chunking) |
+| 3 | 文档预处理与切分 | 「核辐射条款被切散」演练;用评估集比较三类方案 | [→](chapters/ch03-chunking/) | [→](https://www.wushixiongai.com/projects/rag-system/c/03-chunking) |
 | 4 | Embedding 选型 | bge-m3 / OpenAI / 国产模型怎么选;何时该微调 | [→](chapters/ch04-embedding/) | [→](https://www.wushixiongai.com/projects/rag-system/c/04-embedding) |
-| 5 | 检索召回 · 混合检索 | 「推销 vs 销售召回为 0」事故;手写 BM25 + 向量融合 | [→](chapters/ch05-retrieval/) | [→](https://www.wushixiongai.com/projects/rag-system/c/05-retrieval) |
+| 5 | 检索召回 · 混合检索 | 「推销 vs 销售」漏召回演练;手写 BM25 + 向量融合 | [→](chapters/ch05-retrieval/) | [→](https://www.wushixiongai.com/projects/rag-system/c/05-retrieval) |
 | 6 | 重排与检索优化 | Cross-Encoder 凭什么更准;精排慢了怎么提速 | [→](chapters/ch06-reranking/) | [→](https://www.wushixiongai.com/projects/rag-system/c/06-reranking) |
 | 7 | Query 理解与改写 | HYDE「先让模型瞎答一个」为什么反而提升召回 | [→](chapters/ch07-query-understanding/) | [→](https://www.wushixiongai.com/projects/rag-system/c/07-query-understanding) |
 | 8 | 多轮对话与记忆 | 把「那它过了还能退吗」里的「它」补全成可检索的问题 | [→](chapters/ch08-memory/) | [→](https://www.wushixiongai.com/projects/rag-system/c/08-memory) |
@@ -211,7 +213,7 @@ rag-from-zero/
 ├── chapters/                       ← 每章一个目录:可运行 demo + 章节说明
 │   ├── ch01-why-rag/               # 第 1 章 · 为什么做 RAG
 │   ├── ch02-architecture/          # 第 2 章 · RAG 整体架构
-│   ├── ch03-chunking/              # 第 3 章 · 文档切分(含「核辐射事故」复现)
+│   ├── ch03-chunking/              # 第 3 章 · 文档切分(含「核辐射」失败演练)
 │   │   ├── chunk_demo.py           #   跟着敲的切分 demo
 │   │   ├── reproduce-disaster.py   #   复现「核辐射条款被切散」
 │   │   ├── requirements.txt
@@ -234,19 +236,21 @@ rag-from-zero/
 
 ### 简历可以怎么写
 
-完整 3 种段位写法见 → [项目案例库 · RAG 智能问答系统](https://www.wushixiongai.com/projects/rag-system)。节选高级段位:
+只写你亲自完成且能提供证据的事实。公开附录给出的是填空框架,不是可直接复制的固定故事:
 
-> **保险智能客服 RAG 系统**(技术负责人 / 团队 5 人)
+> **`<你的项目名称>`**（`<你的真实职责>`）
 >
-> - 主导某保险公司客服 RAG 系统,处理 5000+ 真实文档
-> - 设计 **结构感知切分 + 向量 + BM25 混合检索** 两阶段架构
-> - 通过三代切分策略迭代,**召回率 67% → 91%**(+24pp,QA 评估集 200 题)
-> - 引入 Cross-Encoder 精排,Top-5 准确率 +23pp
-> - 解决 5 类生产问题:核辐射条款切散、术语同义词、OCR 印章遮挡…
+> - 处理 `<有权使用的资料类型与规模>`，负责 `<你实际完成的模块>`
+> - 基线为 `<修改前方案>`，主要失败样本是 `<你的真实 bad case>`
+> - 实现 `<你实际完成的切分 / 检索 / 重排方案>`
+> - 在 `<样本量、标注规则、运行配置>` 下，实测 `<你自己的指标变化>`
+> - 已知边界为 `<仍未解决的问题>`
+
+合成保险场景不能改写成「主导某保险客户项目」，教程演示数字也不能写进简历。
 
 ### 面试可以怎么讲
 
-每章末尾配 5 道大厂真题（共 50 道），按「为什么这么设计 / 踩过什么坑 / 怎么解决」的思路给讲法。
+每章末尾配相关面试题，按「为什么这么设计 / 怎样验证 / 有什么边界」的思路组织回答。
 
 更多 → [大模型面试题库](https://www.wushixiongai.com/questions)
 
@@ -262,7 +266,7 @@ rag-from-zero/
 
 ## 📜 项目来源
 
-这个项目来自训练营 **2025 年的真实付费项目**,公开版面向自学:文章、可运行代码、图解和配套面试题都在这里,数据做了脱敏(用合成保险条款代替真实业务数据)。1v1 答疑、面试模拟、简历批改等服务,保留在训练营。
+这个公开仓库提供文章、可运行代码、图解和配套面试题。仓库数据是明确标注的合成保险条款,不包含客户数据,也不以公开代码证明生产上线、商业成效或学员求职结果。
 
 想了解训练营,可以关注公众号「吴师兄学大模型」。
 

@@ -1,5 +1,5 @@
 """
-重现"核辐射事故":固定长度切分导致语义割裂
+重现教学失败场景:固定长度切分导致"核辐射"条款语义割裂
 
 对应文章:https://www.wsxdmx.com/projects/rag-system/c/03-chunking
 """
@@ -25,7 +25,7 @@ except ImportError as e:
 def main():
     text = "本保险承保意外伤害导致的身故或残疾,但以下情况除外:(1)战争 (2)核辐射"
 
-    # 极小的 chunk_size,并让它在冒号/句号处断开,模拟开篇那个"从中间切断"的事故
+    # 极小的 chunk_size,并让它在冒号/句号处断开,演示"从中间切断"的风险
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=30,
         chunk_overlap=0,
@@ -33,14 +33,14 @@ def main():
     )
     chunks = splitter.split_text(text)
 
-    print("=== 固定长度切分的事故现场 ===\n")
+    print("=== 固定长度切分的失败演练 ===\n")
     for i, c in enumerate(chunks):
         print(f"Chunk {i}: {c}\n")
 
     print("=== 用户问:核辐射在保障范围内吗? ===")
     print("→ Chunk 0 只到'但以下情况除外'就断了,除外项全在 Chunk 1")
     print("→ 检索只命中 Chunk 0,模型看不到核辐射属于除外项")
-    print("→ 模型理直气壮回答'在保障范围内' → 真实场景:理赔差点出大事")
+    print("→ 模型可能回答'在保障范围内' → 教学场景:残缺证据沿生成链路放大")
 
 
 if __name__ == "__main__":
